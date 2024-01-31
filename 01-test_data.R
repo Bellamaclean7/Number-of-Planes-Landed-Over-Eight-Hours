@@ -1,5 +1,5 @@
 #### Preamble ####
-# Purpose: Simulates the data for the number of planes landed every hour over a period of eight hours
+# Purpose: Tests the data for the number of planes landed every hour over a period of eight hours
 # Author: Bella MacLean
 # Date: 31 January 2024 
 # Contact: bella.maclean@mail.utoronto.ca 
@@ -21,15 +21,6 @@ plane_data <- data.frame(
   Planes_Landed = c(10, 12, 14, 18, 13, 10, 15, 16)
 )
 
-# Create the plot
-ggplot(plane_data, aes(x=Hour, y=Planes_Landed)) +
-  geom_bar(stat="identity", fill="skyblue") +
-  theme_minimal() +
-  labs(title="Number of Planes Landed Per Hour",
-       x="Hour",
-       y="Number of Planes Landed") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
 #### Test data ####
 
 # First Test: Test for Missing Values
@@ -50,6 +41,3 @@ expected_hours <- c('9AM-10AM', '10AM-11AM', '11AM-12PM', '12PM-1PM', '1PM-2PM',
 valid_hours <- all(plane_data$Hour %in% expected_hours)
 # Print the result
 print(valid_hours)
-
-
-

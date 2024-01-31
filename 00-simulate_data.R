@@ -12,8 +12,9 @@
 
 library(tidyverse)
 library(ggplot2)
+library(knitr)
 
-#### Simulated data ####
+### Simulate data ###
 
 # Create the dataset
 plane_data <- data.frame(
@@ -21,13 +22,5 @@ plane_data <- data.frame(
   Planes_Landed = c(10, 12, 14, 18, 13, 10, 15, 16)
 )
 
-# Create the plot
-ggplot(plane_data, aes(x=Hour, y=Planes_Landed)) +
-  geom_bar(stat="identity", fill="skyblue") +
-  theme_minimal() +
-  labs(title="Number of Planes Landed Per Hour",
-       x="Hour",
-       y="Number of Planes Landed") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
-
+# Print the dataset in a table format
+kable(plane_data)
